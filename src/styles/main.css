@@ -4,7 +4,7 @@ body {
     background: #f7f7fa;
     color: #222;
     line-height: 1.7;
-}
+
 
 header {
     background: linear-gradient(90deg, #ff8c42 40%, #ff3c6f 100%);
@@ -114,7 +114,6 @@ h2::after {
     margin-top: 7px;
     margin-bottom: 2px;
 }
-}
 
 ul {
     padding-left: 1.2rem;
@@ -145,67 +144,27 @@ ul {
     justify-content: center;
     box-shadow: 0 1px 4px rgba(255,140,66,0.08);
 }
+.schedule-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0 0.5rem 0;
+}
 .schedule-list li {
     list-style: none;
     margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 2.1em;
     font-size: 1.08em;
+    padding: 0.3em 0.7em;
+    border-radius: 10px;
+    background: #f8f8fc;
+    box-shadow: 0 1px 6px rgba(60,60,111,0.04);
+    transition: background 0.2s;
 }
-.schedule-list li::before {
-    content: '⏰';
+.schedule-list li b {
     color: #ff3c6f;
-    font-size: 1em;
-    position: absolute;
-    left: 0.2em;
-    top: 0.1em;
-    background: #ffe6ef;
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 4px rgba(255,60,111,0.08);
+    font-size: 1.07em;
 }
-}
-    list-style: none;
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 2.1em;
-    font-size: 1.08em;
-}
-.facility-list li::before {
-    content: '✔';
-    color: #ff8c42;
-    font-size: 1em;
-    position: absolute;
-    left: 0.2em;
-    top: 0.1em;
-    background: #fff3e6;
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 4px rgba(255,140,66,0.08);
-}
-.schedule-list li::before {
-    content: '⏰';
-    color: #ff3c6f;
-    font-size: 1em;
-    position: absolute;
-    left: 0.2em;
-    top: 0.1em;
-    background: #ffe6ef;
-    border-radius: 50%;
-    width: 1.5em;
-    height: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 4px rgba(255,60,111,0.08);
+.schedule-list li:not(:first-child):not([style]) {
+    margin-left: 0.7em;
 }
 
 .contact a {
@@ -263,6 +222,43 @@ footer {
     font-size: 1.13em;
     font-weight: 500;
 }
+    html {
+        font-size: 15px;
+    }
+    body {
+        padding: 0;
+    }
+    header {
+        height: auto;
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+        border-radius: 0 0 18px 18px;
+    }
+    header h1 {
+        font-size: 1.25em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    section {
+        padding: 1rem 0.7rem;
+        margin: 1.2rem 0.3rem;
+        border-radius: 12px;
+    }
+    .contact a, .whatsapp-link {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+        padding: 0.8rem 0;
+    }
+    #gallery .image-container img {
+        height: 110px;
+        max-width: 96vw;
+        border-radius: 10px;
+    }
+    .schedule-list li {
+        font-size: 0.98em;
+        padding: 0.25em 0.5em;
+    }
 #pricing b {
     color: #ff3c6f;
     font-size: 1.15em;
@@ -272,6 +268,16 @@ footer {
 
 /* === MOBILE FRIENDLY TWEAKS === */
 @media (max-width: 600px) {
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #f7f7fa 60%, #ffe6ef 100%);
+    color: #222;
+    line-height: 1.7;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.05rem;
+}
     header {
         height: 40vh;
         padding: 0 10px;

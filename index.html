@@ -39,30 +39,27 @@
     </section>
 
     <section id="schedule">
-        <h2>Jadwal Acara</h2>
+        <h2>Jadwal Keberangkatan & Pulang</h2>
         <ul class="schedule-list">
-            <li>08.00 - Kumpul & Persiapan di PIM 2</li>
-            <li>09.00 - Berangkat ke Villa</li>
-            <li>11.00 - Tiba & Check-in Villa</li>
-            <li>12.00 - Makan Siang Bersama</li>
-            <li>13.00 - Games & Aktivitas Seru</li>
-            <li>16.00 - Bebas / Santai / Renang</li>
-            <li>18.00 - BBQ & Karaoke</li>
-            <li>22.00 - Istirahat</li>
+            <li><b>Keberangkatan (18 Agustus):</b></li>
+            <li>• Bus 1: 16.00 WIB</li>
+            <li>• Bus 2: 22.30 WIB</li>
+            <li style="margin-top:10px;"><b>Pulang (19 Agustus):</b></li>
+            <li>• Bersama-sama dari villa (jadwal pulang akan diinformasikan saat acara)</li>
         </ul>
     </section>
 
 
     <section id="pricing">
         <h2>Harga & Peserta</h2>
-        <p>Terbuka untuk <b>tenant, seluruh staff, SPG, dan SPB</b>.</p>
+        <p>Terbuka untuk <b>Tenant, seluruh Staff, SPG, dan SPB</b>.</p>
         <p>Biaya: <b>Rp 150.000 / orang</b></p>
     </section>
 
     <section id="contact">
         <h2>Minat Ikut?</h2>
         <p>Langsung chat panitia kami di WhatsApp:</p>
-        <a href="https://wa.me/6287878856224" class="whatsapp-link" target="_blank">Chat Admin</a>
+        <a href="https://wa.me/6281287064437" class="whatsapp-link" target="_blank">Chat Admin</a>
     </section>
 
     <footer>
@@ -71,7 +68,7 @@
 
     <script src="scripts/main.js"></script>
 </body>
-<style>
+    <style>
 /* Modal Zoom Image Styles */
 .img-modal {
   display: none;
@@ -105,6 +102,16 @@
   cursor: pointer;
   z-index: 1001;
 }
+/* Jadwal list style tanpa icon jam */
+.schedule-list {
+  list-style: none;
+  padding-left: 0;
+}
+.schedule-list li {
+  margin-bottom: 4px;
+  font-size: 1rem;
+  color: #222;
+}
 @keyframes zoomIn {
   from {transform: scale(0.8); opacity: 0.5;}
   to {transform: scale(1); opacity: 1;}
@@ -119,8 +126,11 @@
     right: 15px;
     font-size: 2rem;
   }
+  .schedule-list li {
+    font-size: 0.95rem;
+  }
 }
-</style>
+    </style>
 <script>
 // Zoom image modal logic
 document.addEventListener('DOMContentLoaded', function() {
