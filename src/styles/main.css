@@ -3,6 +3,7 @@ body {
     margin: 0;
     background: #f7f7fa;
     color: #222;
+    line-height: 1.7;
 }
 
 header {
@@ -27,11 +28,12 @@ header h1 {
 }
 
 section {
-    margin: 1.5rem 1rem;
+    margin: 2.2rem 1rem;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    padding: 1.2rem 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 1.5rem 1.2rem;
+    position: relative;
 }
 
 .gallery {
@@ -89,11 +91,121 @@ section {
 }
 
 h2 {
-    color: #333;
+    color: #ff3c6f;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.7rem;
+    background: linear-gradient(90deg, #ff8c42 30%, #ff3c6f 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff8c42 30%, #ff3c6f 80%);
+    margin-top: 7px;
+    margin-bottom: 2px;
+}
 }
 
 ul {
     padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.facility-list li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2.1em;
+    font-size: 1.08em;
+}
+.facility-list li::before {
+    content: '✔';
+    color: #ff8c42;
+    font-size: 1em;
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background: #fff3e6;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(255,140,66,0.08);
+}
+.schedule-list li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2.1em;
+    font-size: 1.08em;
+}
+.schedule-list li::before {
+    content: '⏰';
+    color: #ff3c6f;
+    font-size: 1em;
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background: #ffe6ef;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(255,60,111,0.08);
+}
+}
+    list-style: none;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2.1em;
+    font-size: 1.08em;
+}
+.facility-list li::before {
+    content: '✔';
+    color: #ff8c42;
+    font-size: 1em;
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background: #fff3e6;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(255,140,66,0.08);
+}
+.schedule-list li::before {
+    content: '⏰';
+    color: #ff3c6f;
+    font-size: 1em;
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background: #ffe6ef;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(255,60,111,0.08);
 }
 
 .contact a {
@@ -105,6 +217,9 @@ ul {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    font-size: 1.13em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(37,211,102,0.10);
 }
 
 .contact a:hover {
@@ -113,29 +228,46 @@ ul {
 
 .whatsapp-link {
     display: inline-block;
-    background: #25d366;
+    background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
     color: #fff;
-    padding: 0.8rem 1.5rem;
+    padding: 0.9rem 1.7rem;
     border-radius: 32px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 8px rgba(37,211,102,0.12);
+    font-size: 1.13rem;
+    box-shadow: 0 2px 12px rgba(37,211,102,0.13);
     transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.5px;
 }
 
-.whatsapp-link:hover {
-    background: #128c7e;
-    transform: scale(1.05);
+ .whatsapp-link:hover {
+    background: linear-gradient(90deg, #128c7e 60%, #25d366 100%);
+    transform: scale(1.07);
 }
 
 footer {
     text-align: center;
     color: #aaa;
-    font-size: 0.95rem;
-    margin: 2rem 0 1rem 0;
+    font-size: 0.98rem;
+    margin: 2.5rem 0 1.2rem 0;
     background: none;
     box-shadow: none;
+}
+
+/* Card info untuk harga & peserta */
+#pricing {
+    background: linear-gradient(90deg, #fffbe7 60%, #ffe6ef 100%);
+    border: 1.5px solid #ff8c42;
+    box-shadow: 0 2px 16px rgba(255,140,66,0.07);
+    text-align: center;
+    font-size: 1.13em;
+    font-weight: 500;
+}
+#pricing b {
+    color: #ff3c6f;
+    font-size: 1.15em;
+    font-weight: 700;
+}
 }
 
 /* === MOBILE FRIENDLY TWEAKS === */

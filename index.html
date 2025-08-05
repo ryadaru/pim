@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Outing Foodhall PIM 2</h1>
-        <p class="subtitle">Liburan Seru di Villa Mewah!</p>
+        <p class="subtitle">Villa Puri Sophia Puncak</p>
     </header>
     
     <section id="gallery">
@@ -19,30 +19,50 @@
             <img src="./src/assets/vila2.jpg" alt="Villa 2" class="fade-in">
             <img src="./src/assets/vila3.png" alt="Villa 3" class="fade-in">
         </div>
+        <!-- Modal Zoom Image -->
+        <div id="imgModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
+            <img class="img-modal-content" id="imgModalTarget" alt="Zoomed Villa">
+        </div>
     </section>
 
-    <section id="schedule">
-        <h2>Susunan Acara</h2>
-        <ul>
-            <li>09.00 - 10.00: Kedatangan & Sarapan</li>
-            <li>10.00 - 12.00: Games & Fun Activities</li>
-            <li>12.00 - 13.00: Lunch</li>
-            <li>13.00 - 15.00: Free Time & Explore Villa</li>
-            <li>15.00 - 16.00: Penutupan & Foto Bersama</li>
+    <section id="facilities">
+        <h2>Fasilitas Villa</h2>
+        <ul class="facility-list">
+            <li>🏊‍♂️ Kolam Renang Pribadi</li>
+            <li>🍽️ Dapur Lengkap</li>
+            <li>🛏️ Kamar Tidur Nyaman</li>
+            <li>🎤 Karaoke & Sound System</li>
+            <li>📶 WiFi Gratis</li>
+            <li>🚗 Parkir Luas</li>
         </ul>
     </section>
 
+    <section id="schedule">
+        <h2>Jadwal Acara</h2>
+        <ul class="schedule-list">
+            <li>08.00 - Kumpul & Persiapan di PIM 2</li>
+            <li>09.00 - Berangkat ke Villa</li>
+            <li>11.00 - Tiba & Check-in Villa</li>
+            <li>12.00 - Makan Siang Bersama</li>
+            <li>13.00 - Games & Aktivitas Seru</li>
+            <li>16.00 - Bebas / Santai / Renang</li>
+            <li>18.00 - BBQ & Karaoke</li>
+            <li>22.00 - Istirahat</li>
+        </ul>
+    </section>
+
+
     <section id="pricing">
-        <h2>Harga Paket</h2>
-        <p>Paket Reguler: <b>Rp 500.000</b></p>
-        <p>Paket Premium: <b>Rp 750.000</b></p>
-        <p>Paket VIP: <b>Rp 1.000.000</b></p>
+        <h2>Harga & Peserta</h2>
+        <p>Terbuka untuk <b>tenant, seluruh staff, SPG, dan SPB</b>.</p>
+        <p>Biaya: <b>Rp 150.000 / orang</b></p>
     </section>
 
     <section id="contact">
         <h2>Minat Ikut?</h2>
-        <p>Langsung chat kami di WhatsApp:</p>
-        <a href="https://wa.me/62832183218" class="whatsapp-link" target="_blank">Chat Admin</a>
+        <p>Langsung chat panitia kami di WhatsApp:</p>
+        <a href="https://wa.me/6287878856224" class="whatsapp-link" target="_blank">Chat Admin</a>
     </section>
 
     <footer>
@@ -50,5 +70,84 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+</body>
+<style>
+/* Modal Zoom Image Styles */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.img-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  animation: zoomIn 0.2s;
+}
+.img-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity: 0.5;}
+  to {transform: scale(1); opacity: 1;}
+}
+@media (max-width: 600px) {
+  .img-modal-content {
+    max-width: 98vw;
+    max-height: 70vh;
+  }
+  .img-modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+  }
+}
+</style>
+<script>
+// Zoom image modal logic
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.image-container img');
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('imgModalTarget');
+  const closeBtn = document.querySelector('.img-modal-close');
+  images.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      modal.style.display = 'flex';
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  };
+});
+</script>
 </body>
 </html>
